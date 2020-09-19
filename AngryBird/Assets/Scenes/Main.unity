@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 225430469}
   - component: {fileID: 225430468}
   m_Layer: 0
-  m_Name: RedBird (2)
+  m_Name: BombBird
   m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,12 +186,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 225430467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a02869c0520d2488ebdfaa2e033031, type: 3}
+  m_Script: {fileID: 11500000, guid: d2e79ebb234a8754d910cb56a5acd43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 1329942849}
   RigidBody: {fileID: 225430470}
   Collider: {fileID: 225430469}
+  explosion: {fileID: 95815910662866923, guid: 08f214c4ff417814eacec2084f38abc8, type: 3}
 --- !u!58 &225430469
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -207,7 +208,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.35
 --- !u!50 &225430470
 Rigidbody2D:
   serializedVersion: 4
@@ -266,7 +267,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 8d65fab5aa828d7439359b962c57d921, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d20e3fb65723114693388b7b8c277c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
