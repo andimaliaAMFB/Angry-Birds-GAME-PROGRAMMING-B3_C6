@@ -10,10 +10,10 @@ public class BombBird : Bird
     {
         if (wood.gameObject.tag == "Obstacle")
         {
-            Debug.Log("Hit");
+            Debug.Log("Bomb");
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(wood.gameObject);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

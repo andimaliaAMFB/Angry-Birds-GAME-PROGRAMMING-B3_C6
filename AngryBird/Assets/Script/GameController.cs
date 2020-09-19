@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public List<Enemy> Enemies;
     private Bird _shotBird;
     public BoxCollider2D TapCollider;
+    private UIControllerScript uiControl;
 
     private bool _isGameEnded = false;
 
@@ -28,6 +29,8 @@ public class GameController : MonoBehaviour
         TapCollider.enabled = false;
         SlingShooter.InitiateBird(Birds[0]);
         _shotBird = Birds[0];
+
+        uiControl = GameObject.Find("Canvas").GetComponent<UIControllerScript>();
     }
 
     public void ChangeBird()
@@ -46,6 +49,12 @@ public class GameController : MonoBehaviour
             SlingShooter.InitiateBird(Birds[0]);
             _shotBird = Birds[0];
         }
+
+        if (Birds.Count == 0 && Enemies.Count != 0)
+        {
+            Debug.Log("Failed Clear Level");
+            uiControl.failGame();
+        }
     }
 
     public void CheckGameEnd(GameObject destroyedEnemy)
@@ -63,6 +72,7 @@ public class GameController : MonoBehaviour
         {
             _isGameEnded = true;
             Debug.Log("Level Clear!!");
+            uiControl.endGame();
         }
     }
 
